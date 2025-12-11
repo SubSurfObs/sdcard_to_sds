@@ -34,3 +34,6 @@ All actual waveform data live in:
   - A log of each upload session
 
 ---
+
+## Useful commands
+
