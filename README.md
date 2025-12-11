@@ -59,6 +59,12 @@ for f in ~/mnt/sdcard_to_sds/inbox/BGT2/*.mseed; do
         ~/mnt/sdcard_to_sds/local_sds
 done
 
+```
+In the above example, it would be nice to eliminet the write to local filesystem, for instance: 
 
 ```
+time ./scripts/merge_days_gecko.sh /Volumes/BGT3/data /Volumes/proj-6700_uom_seismic_data-1128.4.1143/sdcard_to_sds/inbox/BGT3/
+```
+But this comes as a signficant performance cost (at least 10 times) 
+
 
