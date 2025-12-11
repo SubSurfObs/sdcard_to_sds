@@ -67,4 +67,7 @@ time ./scripts/merge_days_gecko.sh /Volumes/BGT3/data /Volumes/proj-6700_uom_sei
 ```
 But this comes as a signficant performance cost (at least 10 times) 
 
+How about writing to a local external HD?
+
+
 
