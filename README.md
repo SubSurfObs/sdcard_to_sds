@@ -35,5 +35,30 @@ All actual waveform data live in:
 
 ---
 
-## Useful commands
+## Example usage
+
+*Gecko files arae minte long by default. Adding these to and SMB mounted disk is slow. In this example, we concat. the miniseed files to day long files using merge_days_gecko.sh *
+
+```
+#from this repo (on local filesystem) run the follwoing where BGT2 is teh name of the SD card, ./inbox/BGT2/
+./scripts/merge_days_gecko.sh /Volumes/BGT2/data ./inbox/BGT2/
+
+
+#then rsync to this repo on mounted disk 
+rsync -avh --progress inbox/BGT2 /Volumes/proj-6700_uom_seismic_data-1128.4.1143/sdcard_to_sds/inbox
+
+#then on VM, (this repo on mounted disk) run:
+#note location code remapping here (it's quite easy to not set Geck loc code correctly, so this will homogenise to 00)
+for f in ~/mnt/sdcard_to_sds/inbox/BGT2/*.mseed; do
+    echo "Processing $f"
+
+    cat "$f" \
+    | scmssort -u -E 2>/dev/null \
+    | scart -I - \
+        --rename "Z1.BGT2.*.*:Z1.BGT2.00.-" \
+        ~/mnt/sdcard_to_sds/local_sds
+done
+
+
+```
 
