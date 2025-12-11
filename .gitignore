@@ -1,0 +1,7 @@
+# Ignore everything inside inbox/ but keep the folder
+inbox/*
+!inbox/.gitkeep
+
+# Ignore everything inside local_sds/ but keep the folder
+local_sds/*
+!local_sds/.gitkeep
