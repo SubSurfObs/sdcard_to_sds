@@ -69,5 +69,10 @@ But this comes as a signficant performance cost (at least 10 times)
 
 How about writing to a local external HD?
 
+## Next steps
 
+Given the perfomane limitations of transferring many small files, it's probablt worth runnign everything locally in one step, this means building seiscomp on teh mac, and then - instread of mioniseed concat, just use scarty to build a local SDS folder and copy that to the mount. Will explore using anintemediater external HD. 
+
+
+https://github.com/seiscomp-macOS/seiscomp
 
